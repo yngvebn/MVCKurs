@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Model
+
+<h3>Eller inne i blant vanlig (@Model) tekst.</h3>
+
+<p>Kanskje som verdien på en <a href="#" title="@Model">attributt</a></p>
+
+@if(Model.Equals("Hello world"))
+{
+    <h2>PingPong</h2>
+}
