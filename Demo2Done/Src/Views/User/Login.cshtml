@@ -1,0 +1,14 @@
+﻿@model Src.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <button type="submit">Log in</button>
+}
