@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<button id="process" disabled="disabled">Start Processing</button>
+Status: <span id="progress">Connecting...</span>
+@section scripts{
+    <script type="text/javascript">
+   
+        $(function () {
+            $.connection.hub.start().done(function () {
+                $("#process").removeAttr('disabled');
+                $("#progress").text('Connected!');
+            });
+
+
+            $("#process").click(function() {
+                $.connection.mainHub.start();
+            });
+
+            $.connection.mainHub.progress = function(state) {
+                $("#progress").text(state);
+            };
+        });
+    </script>
+    }
